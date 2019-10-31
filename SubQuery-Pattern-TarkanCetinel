@@ -1,4 +1,4 @@
-SQL-Query that uses correlated Sub Queries pattern with an aggregate function MIN
+/* Query by TarkanCetinel and aggregate function MIN */
 SELECT ProjectID, EmployeeNumber, HoursWorked
 FROM assignment
 WHERE HoursWorked >
@@ -6,7 +6,7 @@ WHERE HoursWorked >
      FROM assignment)
 ORDER BY HoursWorked
 
-SQL-Query that uses correlated Sub Queries pattern with the Double Not Exists
+/* Query by TarkanCetinel and Double Not Exists */
 SELECT DISTINCT EmployeeNumber
 FROM employee
 WHERE NOT EXISTS(

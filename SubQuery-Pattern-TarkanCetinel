@@ -1,0 +1,19 @@
+SQL-Query that uses correlated Sub Queries pattern with an aggregate function MIN
+SELECT ProjectID, EmployeeNumber, HoursWorked
+FROM assignment
+WHERE HoursWorked >
+	(SELECT MAX(HoursWorked)
+     FROM assignment)
+ORDER BY HoursWorked
+
+SQL-Query that uses correlated Sub Queries pattern with the Double Not Exists
+SELECT DISTINCT EmployeeNumber
+FROM employee
+WHERE NOT EXISTS(
+	SELECT *
+    FROM project
+    	WHERE NOT EXISTS(
+   		 SELECT *
+    	FROM assignment
+		WHERE assignment.EmployeeNumber=Employee.EmployeeNumber)
+)
